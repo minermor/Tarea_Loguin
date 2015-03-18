@@ -14,12 +14,76 @@ namespace Tarea_Loguin
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
 			
-			// TODO: Implement Functionality Here
 			
-			Console.Write("Press any key to continue . . . ");
-			Console.ReadKey(true);
-		}
+			
+			
+			
+	<?php
+
+session_start();
+
+        if ($_POST ['user']  !=""  AND $_POST ['pass'] !="")   {
+	if ($_POST ['user'] =="MinerMor" and  $_POST [ 'pass' ]  == 
+
+"Antony3453")  {
+		$_SESSION ['admin']  = $_POST [ 'user' ] ;
+      } else {
+	        $_SESSION ['error'] ="Login incorrecto";
+	                                                       }
+      } else {
+	        $_SESSION ['llene']  ="Llene los campos";
+ }
+
+header ("location:Loguear.php");
+
+?>	
+
+
+	
+	
+	<?php
+
+session_start();
+
+      if (isset ( $_SESSION ['admin'])) {
+          echo "Bienvenido Usuario :  ".$_SESSION ['admin'];
+    } else {
+?>    
+
+<h1> INICIAR SESION</h1>
+<form action="Verificacion.php" method="post">
+Usuario <br>
+<input type="text" name="user"><br>
+
+Password<br>
+
+<input type ="password" name="pass"><br>
+<input type = submit value="Iniciar sesion">
+
+</form><br>
+
+<?php
+
+
+     if ( isset ( $_SESSION [ 'Llene' ] )) {
+         echo $_SESSION ['Llene'];
+
+unset ( $_SESSION [ 'Llene' ] );
+}        elseif (isset ($_SESSION ['error'] )) {
+         echo $_SESSION ['error'];
+
+unset ( $_SESSION [ 'error' ] );
+}
+}
+
+?>
+
+
+
+
+	
+		
+	}
 	}
 }
